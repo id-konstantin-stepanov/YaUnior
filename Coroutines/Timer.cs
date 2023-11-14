@@ -19,7 +19,7 @@ public class Timer : MonoBehaviour
         for (int i = start; i > 0; i--)
         {
             DisplayCountdown(i);
-            yield return null;
+            yield return wait;
         }
     }
 
