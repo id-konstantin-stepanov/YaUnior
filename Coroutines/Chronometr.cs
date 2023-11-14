@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class Chronometr : MonoBehaviour
 {
     [SerializeField] private Text _text;
+    [SerializeField] private float _delay = 10.0f;
 
     private float _triggerTime;
-    private float _delay = 10.0f;
 
     private void Start()
     {

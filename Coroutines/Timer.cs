@@ -10,7 +10,6 @@ public class Timer : MonoBehaviour
     {
         _text.text = "";
         StartCoroutine(Countdown(1));
-        Instantiate(_text); // Привет мир, как твои дела?
     }
 
     private IEnumerator Countdown(float delay, int start = 10)

@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
 public class ColorAndRotationChanger : MonoBehaviour
 {
     [SerializeField] private Color _startColor = Color.red;
     [SerializeField] private Color _endColor = Color.green;
     [SerializeField] private float _duration = 3.0f;
+    [SerializeField] private Vector3 _rotation = new Vector3(1.0f, 0.5f, 0.0f);
 
     private Material _material;
 
@@ -33,7 +35,7 @@ public class ColorAndRotationChanger : MonoBehaviour
     {
         while (true)
         {
-            transform.Rotate(new Vector3(1.0f, 0.5f, 0.0f));
+            transform.Rotate(_rotation);
             yield return null;
         }
     }
