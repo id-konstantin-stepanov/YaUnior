@@ -8,17 +8,16 @@ public class RedefinedMover : MonoBehaviour
     [SerializeField] private int _stepsCount = 10;
 
     private IEnumerator _enumerator;
-
     private float _timer = 0.0f;
     private float _timeStep;
 
-    void Start()
+    private void Start()
     {
         _enumerator = GetEnumerator();
         _timeStep = 1.0f / _stepsCount;
     }
 
-    void Update()
+    private void Update()
     {
         if (_timer <= Time.time)
         {
