@@ -1,11 +1,11 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private Text _text;
-    
+    [SerializeField] private TextMeshProUGUI _text;
+
     private void Start()
     {
         _text.text = "";
