@@ -9,13 +9,13 @@ public class GameObjectSpawner : MonoBehaviour
 
     private void Start()
     {
-        Instantiator(_cubePrefab);
+        CreateWithInstantiate();
         CreateManually();
     }
 
-    private void Instantiator(GameObject prefab)
+    private void CreateWithInstantiate()
     {
-        Instantiate(prefab);
+        Instantiate(_cubePrefab);
     }
 
     private void CreateManually()
