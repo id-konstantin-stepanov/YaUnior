@@ -9,19 +9,19 @@ public class ExtendedGameObjectSpawner : MonoBehaviour
 
     private void Start()
     {
-        Creator(_mesh, _material, _rotation, _position);
+        CreateManually();
     }
 
-    private void Creator(Mesh mesh, Material material, Quaternion rotation, Vector3 position)
+    private void CreateManually()
     {
         GameObject cube = new GameObject("Cube");
         MeshFilter filter = cube.AddComponent<MeshFilter>();
-        filter.mesh = mesh;
+        filter.mesh = _mesh;
         cube.AddComponent<MeshRenderer>();
         cube.AddComponent<BoxCollider>();
-        cube.GetComponent<Renderer>().material = material;
-        cube.transform.rotation = rotation;
-        cube.transform.position = position;
+        cube.GetComponent<Renderer>().material = _material;
+        cube.transform.rotation = _rotation;
+        cube.transform.position = _position;
 
         cube.AddComponent<Rigidbody>();
     }

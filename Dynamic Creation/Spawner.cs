@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("GetSphere", 0.0f, _repeatRate);
+        InvokeRepeating(nameof(GetSphere), 0.0f, _repeatRate);
     }
 
     private void GetSphere()

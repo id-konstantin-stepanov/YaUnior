@@ -10,7 +10,7 @@ public class GameObjectSpawner : MonoBehaviour
     private void Start()
     {
         Instantiator(_cubePrefab);
-        Creator(_material, _rotation, _position);
+        CreateManually();
     }
 
     private void Instantiator(GameObject prefab)
@@ -18,11 +18,11 @@ public class GameObjectSpawner : MonoBehaviour
         Instantiate(prefab);
     }
 
-    private void Creator(Material material, Quaternion rotation, Vector3 position)
+    private void CreateManually()
     {
         GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        cube.GetComponent<Renderer>().material = material;
-        cube.transform.rotation = rotation;
-        cube.transform.position = position;
+        cube.GetComponent<Renderer>().material = _material;
+        cube.transform.rotation = _rotation;
+        cube.transform.position = _position;
     }
 }

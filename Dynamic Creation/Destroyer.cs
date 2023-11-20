@@ -3,7 +3,7 @@ using UnityEngine;
 public class Destroyer : MonoBehaviour
 {
     [SerializeField] private Rigidbody _sphere;
-    [SerializeField] private GameObject _wallPrefab;
+    [SerializeField] private Wall _wallPrefab;
 
     private void Start()
     {
@@ -12,7 +12,7 @@ public class Destroyer : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.TryGetComponent(out Wall _))
         {
             Instantiate(_wallPrefab, _wallPrefab.transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
